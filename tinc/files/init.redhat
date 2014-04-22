@@ -43,12 +43,12 @@
 #############################################################################
 # configuration & sanity checks
 
-#TINCD=/usr/sbin/tincd
-TINCD=/usr/local/sbin/tincd
-#TCONF=/etc/tinc
-TCONF=/usr/local/etc/tinc
-#TPIDS=/var/run
-TPIDS=/usr/local/var/run
+TINCD=/usr/sbin/tincd
+#TINCD=/usr/local/sbin/tincd
+TCONF=/etc/tinc
+#TCONF=/usr/local/etc/tinc
+TPIDS=/var/run
+#TPIDS=/usr/local/var/run
 #DEBUG=-dddd
 #DEBUG=
 #DEBUG=--debug=5
