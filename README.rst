@@ -35,7 +35,7 @@ Example Pillar:
 		host_config:
 			Subnet: "192.168.xxx.xxx/xx"
 		tinc_config:
-			Name: ifEmptyDefaultTo_replaceWithYourServerName
+			Name: "ifEmptyDefaultTo_replaceWithYourServerName"
 			ConnectTo: [ "server1", "server2", "server3" ]
 		tinc_up: |
 			ifconfig $INTERFACE 192.168.xxx.xxx netmask 255.255.255.0
