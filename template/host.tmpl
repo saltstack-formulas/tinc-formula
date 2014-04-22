@@ -1,0 +1,15 @@
+{%- for keyword, argument in host.get('host_config', {}).iteritems() %}
+	{%- if argument is none %} 
+	{%- elif argument is sameas true %}
+{{ keyword }} = yes
+	{%- elif argument is sameas false %}
+{{ keyword }} = no
+	{%- elif argument is string or argument is number %}
+{{ keyword }} = {{ argument }}
+	{%- else %}
+		{%- for item in argument %}
+{{ keyword }} = {{ item }}
+		{%- endfor %}
+	{%- endif %}
+{%- endfor %}
+{{ host.get('RSAPublicKey') }}
