@@ -62,6 +62,3 @@ tinc:
 	ifconfig $INTERFACE 192.168.xxx.xxx netmask 255.255.255.0
       tinc_down:|
 	ifconfig $INTERFACE down
-      host_up:
-      host_down:
-
