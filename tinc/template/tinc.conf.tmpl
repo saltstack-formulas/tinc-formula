@@ -7,7 +7,7 @@
 # Variable names are treated case insensitive.
 
 # The name of this tinc host. Required.
-Name = {{ host.get('tinc_config:Name', hostname) }}
+Name = {{ tinc_config.get('Name', hostname) }}
 
 # The internet h st to connect with.
 # Comment these out to make yourself a listen-only connection
@@ -21,7 +21,7 @@ Name = {{ host.get('tinc_config:Name', hostname) }}
 # /dev/tun0 for Solaris and OpenBSD,
 # and /dev/net/tun for Linux tun/tap device.
 #Device = tun
-{%- for keyword, argument in host.get('tinc_config', {}).iteritems() %}
+{%- for keyword, argument in tinc_config.iteritems() %}
         {%- if argument is none %}
 	{%- elif keyword is sameas "Name" %}
         {%- elif argument is sameas true %}

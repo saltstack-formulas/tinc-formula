@@ -1,4 +1,4 @@
-{%- for keyword, argument in host.get('host_config', {}).iteritems() %}
+{%- for keyword, argument in host_config.iteritems() %}
 	{%- if argument is none %} 
 	{%- elif argument is sameas true %}
 {{ keyword }} = yes
@@ -12,4 +12,4 @@
 		{%- endfor %}
 	{%- endif %}
 {%- endfor %}
-{{ host.get('RSAPublicKey') }}
+{{ RSAPublicKey }}

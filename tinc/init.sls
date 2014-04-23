@@ -39,10 +39,9 @@ tinc:
     - source: salt://tinc/template/host.tmpl
     - template: 'jinja'
     - context:
-      hostname: {{ hostname|json }}
-      host: {{ host|json }}
-      network: {{ network|json }}
-     
+      host_config: {{ host.get('host_config', {})|json }}
+      RSAPublicKey: {{ host.get('RSAPublicKey')|json }}
+
     {%- set short_name = grains['id'].split('.') | first %}
 
     {%- if short_name == hostname %}
@@ -54,7 +53,7 @@ tinc:
     - source: salt://tinc/template/tinc.conf.tmpl
     - template: 'jinja'
     - context:
-      host: {{ host|json }}
+      tinc_config: {{ host.get('tinc_config')|json }}
       hostname: {{ hostname|json }}
 
       {%- if host.get('tinc_up', {}) is defined %}
