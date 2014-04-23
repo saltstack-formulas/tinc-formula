@@ -41,3 +41,14 @@ Example Pillar:
 			ifconfig $INTERFACE 192.168.xxx.xxx netmask 255.255.255.0
 		tinc_down: |
 			ifconfig $INTERFACE down
+
+``tinc.hostsfile``
+-------
+
+Also manage /etc/hosts for easy accessing
+To allow multiple network to co-exist,it follow "hostname.netname" format
+
+Example: ::
+
+    192.168.xxx.xxx         replaceWithYourServerName.replaceWithYourNetworkName
+
