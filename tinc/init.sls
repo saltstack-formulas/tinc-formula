@@ -2,6 +2,10 @@ tinc:
   pkg:
     - installed
     - name: tinc
+  service:
+    - running
+    - name: tinc
+    - enable: True
 
 {% if grains['os_family'] == 'RedHat' %}
 /etc/init.d/tinc:
@@ -55,6 +59,8 @@ tinc:
     - context:
       tinc_config: {{ host.get('tinc_config')|json }}
       hostname: {{ hostname|json }}
+    - watch_in:
+      - service: tinc
 
       {%- if host.get('tinc_up', {}) is defined %}
 /etc/tinc/{{ netname }}/tinc-up:

@@ -19,6 +19,8 @@ Available states
 
 Install tinc and related configuration. 
 
+Add your network name to /etc/tinc/nets.boot to start on system startup
+
 Example Pillar:
 
 .. code:: yaml
