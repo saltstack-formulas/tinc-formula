@@ -47,7 +47,8 @@ Example Pillar:
 ``tinc.hostsfile``
 -------
 
-Also manage /etc/hosts for easy accessing
+Also manage /etc/hosts for easy accessing.
+
 To allow multiple network to co-exist,it follow "hostname.netname" format
 
 Example: ::
