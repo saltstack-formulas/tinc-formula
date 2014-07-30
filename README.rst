@@ -18,10 +18,21 @@ Available states
 -------
 
 Install tinc and related configuration. 
+Add your network name to ``/etc/tinc/nets.boot`` to start on system startup.
 
-Add your network name to /etc/tinc/nets.boot to start on system startup
+``tinc.hostsfile``
+-------
 
-Example Pillar:
+Also manage ``/etc/hosts`` for easy accessing.
+
+To allow multiple network to co-exist, it follows "hostname.netname" format
+
+Example: ::
+
+    192.168.xxx.xxx         replaceWithYourServerName.replaceWithYourNetworkName
+
+Example Pillar
+==============
 
 .. code:: yaml
 
@@ -43,15 +54,4 @@ Example Pillar:
             ifconfig $INTERFACE 192.168.xxx.xxx netmask 255.255.255.0
           tinc_down: |
             ifconfig $INTERFACE down
-
-``tinc.hostsfile``
--------
-
-Also manage /etc/hosts for easy accessing.
-
-To allow multiple network to co-exist,it follow "hostname.netname" format
-
-Example: ::
-
-    192.168.xxx.xxx         replaceWithYourServerName.replaceWithYourNetworkName
 
